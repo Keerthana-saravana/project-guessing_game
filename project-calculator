@@ -1,0 +1,53 @@
+#project calculator
+
+#defining all the operations functions
+def addition(a,b):
+    return a+b
+
+def subtraction(a,b):
+    return a-b
+
+def multiplication(a,b):
+    return a*b
+
+def division(a,b):
+    if b!=0:
+        return a/b
+    else:
+        return "the number is not divisible by zero"
+
+#using loop to calculate multiple times
+def calculator():
+    while True:
+        print("if you want to start or continue give yes or else give no to discontinue ")
+        option=input("enter yes or no:")
+        if option=="yes":
+            print("These are the folowing operations that you can perform:")
+            print("1.addition")
+            print("2.subtraction")
+            print("3.multiplication")
+            print("4.division")
+
+            print("enter any one of the choice to perform the operations")
+            choice=int(input("enter the choice (1 or 2 or 3 or 4):"))#to enter the choices
+
+           #getting input from users
+            print("enter the numbers to perform the operations")
+            num1=int(input("enter the number-1:"))
+            num2=int(input("enter the number-2:"))
+
+            if choice==1:
+                print(f"addition:{addition(num1,num2)}")
+            elif choice==2:
+                print(f"subtraction:{subtraction(num1,num2)}")
+            elif choice==3:
+                print(f"multiplication:{multiplication(num1,num2)}")
+            elif choice==4:
+                print(f"division:{division(num1,num2)}")
+            else:
+                print("it is an invalid choice")
+        else:
+            print("Thanks for using my calculator!!")
+            break
+#calling the function
+calculator()
