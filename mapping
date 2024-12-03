@@ -1,0 +1,30 @@
+# Input list for demonstration
+nums = [1, 2, 3, 4, 5]
+
+# Using an anonymous function (lambda) with map
+squared = [x for x in map(lambda x: x**2, nums)]
+
+# Using filter to select only even numbers
+evens = [x for x in filter(lambda x: x % 2 == 0, nums)]
+
+# Using zip to combine two lists
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+zipped = [(x, y) for x, y in zip(list1, list2)]
+
+# Using enumerate to get index and value
+enumerated = [(i, x) for i, x in enumerate(nums)]
+
+# Using an iterator
+iter_nums = iter(nums)
+iterated = [next(iter_nums) for _ in range(len(nums))]
+
+# Using a generator
+gen = (x**3 for x in nums)  # Generator expression
+generated = [x for x in gen]
+
+# Using reduce (note: reduce doesn't fit directly into a list comprehension as it reduces to a single value)
+from functools import reduce
+product = reduce(lambda x, y: x * y, nums)  # Reduces to a single value, not suitable for a list comprehension
+# If needed in a list, it can be wrapped as follows:
+reduced = [reduce(lambda x, y: x * y, nums)]  # Result in a list of one element
